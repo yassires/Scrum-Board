@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
 	<meta charset="utf-8" />
 	<title>YouCode | Scrum Board</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
-	
+
 	<!-- ================== BEGIN core-css ================== -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
 	<link href="assets/css/vendor.min.css" rel="stylesheet" />
 	<link href="assets/css/default/app.min.css" rel="stylesheet" />
 	<link href="assets/css/style.css" rel="stylesheet" />
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
 	<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> -->
 	<!-- ================== END core-css ================== -->
 </head>
-<body>
+
+<body id="body">
 	<!-- BEGIN #app -->
 	<div id="app" class="app-without-sidebar">
 		<!-- BEGIN #content -->
@@ -28,345 +31,220 @@
 						<li class="d-flex breadcrumb-item active "> Scrum Board </li>
 					</ol>
 					<!-- BEGIN page-header -->
-					<h1 class="page-header mt-10px">
-						Scrum Board 
+					<h1 class="page-header mt-10px fs-1">
+						Scrum Board
 					</h1>
 					<!-- END page-header -->
 				</div>
-				
+
 				<div class="">
-					<button type="button" class="btn btn-outline-success "data-bs-toggle="modal" data-bs-target="#taskBtn"><i class="fa-solid fa-plus"></i>Add task</button>
+					<button type="button" class="btn btn-outline-success " data-bs-toggle="modal"
+						data-bs-target="#taskBtn"><i class="fa-solid fa-plus"></i>Add task</button>
 				</div>
 			</div>
-			
+
 			<div class="row">
 				<div class="col-12 col-lg-4  p-2 ">
-					<div class="p-0">
-						<div class="card-header bg-black text-white rounded-top">
-							<h4 class="mb-0 p-10px ">To do (<span id="to-do-tasks-count">5</span>)</h4>
+					<div class="card">
+						<div class="card-header bg-black  text-white rounded-top d-flex   ">
+							<h4 class="mb-0 p-10px ">To do (<span id="to-do-tasks-count"></span>)</h4>
+
 						</div>
 						<div class="list-group-item p-0" id="to-do-tasks">
 							<!-- TO DO TASKS HERE -->
-							<button class="d-flex w-100 border-0 border-top ">
-								<div class="text-green fs-4">
-									<i class="fa-regular fa-circle-question ms-10px"></i>
-								</div>
-								<div class="">
-									<div class="fs-3 ms-10px">Keep all the updated requirements in one place</div>
-									<div class="">
-										<div class="fs-5 text-gray ms-10px">#1 created in 2022-10-08</div>
-										<div class="fs-5 ms-10px" title="There is hardly anything more frustrating than having to look for current requirements in tens of comments under the actual description or having to decide which commenter is actually authorized to change the requirements. The goal here is to keep all the up-to-date requirements and details in the main/primary description of a task. Even though the information in comments may affect initial criteria, just update this primary description accordingly.">There is hardly anything more frustrating than having t...</div>
-									</div>
-									<div class="m-10px ">
-										<span class="bg-blue-500 p-5px px-10px text-white rounded-2">High</span>
-										<span class="bg-gray-400 p-5px px-10px text-black rounded-2">Feature</span>
-									</div>
-								</div>
-							</button>
-							<button class="d-flex w-100 border-0 border-top">
-								<div class="text-green fs-4">
-									<i class="fa-regular fa-circle-question ms-10px"></i> 
-								</div>
-								<div class="ms-10px">
-									<div class="fs-3">Consider creating an acceptance criteria list</div>
-									<div class="">
-										<div class="fs-5 text-gray">#2 created in 2022-10-08</div>
-										<div class="fs-5 " title="Descriptive requirements are very helpful when it comes to understanding the context of a problem, yet finally it is good to precisely specify what is expected. Thus the developer will not have to look for the actual requirements in a long, descriptive text but he will be able to easily get to the essence. One might find that sometimes — when acceptance criteria are well defined — there is little or no need for any additional information. Example:
-						a) User navigates to “/accounts” and clicks on red download CSV button
-						b) Popup appears with two buttons: “This year” and “Last year”
-						c) If user clicked on “Last year” download is initiated
-						d) CSV downloaded includes following columns…">Descriptive requirements are very helpful when it comes...</div>
-									</div>
-									<div class="my-10px">
-										<span class="bg-blue-500 p-5px px-10px text-white rounded-2">High</span>
-										<span class="bg-gray-400 p-5px px-10px text-black rounded-2">Feature</span>
-									</div>
-								</div>
-							</button>
-							<button class="d-flex w-100 border-0 border-top">
-								<div class="text-green fs-4">
-									<i class="fa-regular fa-circle-question ms-10px"></i> 
-								</div>
-								<div class="ms-10px">
-									<div class="fs-3 ">Provide examples, credentials, etc</div>
-									<div class="">
-										<div class="fs-5 text-gray">#3 created in 2022-10-08</div>
-										<div class="fs-5" title="If the expectation is to process or generate some file — attach an example of such a file. If the goal is to integrate what is being developed with some service, ensure your devs have access to this service and its documentation. This list could go on and on — the bottom line is — if there is something that our developer might make use of, try to foresee it and provide them with (access to) it.">If the expectation is to process or generate some file ...</div>
-									</div>
-									<div class="my-10px">
-										<span class="bg-blue-500 p-5px px-10px text-white rounded-2">High</span>
-										<span class="bg-gray-400 p-5px px-10px text-black rounded-2">Feature</span>
-									</div>
-								</div>
-							</button>
-							<button class="d-flex w-100 border-0 border-top">
-								<div class="text-green fs-4">
-									<i class="fa-regular fa-circle-question ms-10px"></i> 
-								</div>
-								<div class="ms-10px">
-									<div class="fs-3">Annotate</div>
-									<div class="">
-										<div class="fs-5 text-gray">#4 created in 2022-10-08</div>
-										<div class="fs-5 " title="The mockup provided can sometimes be confusing for developers. Especially if it contains much more content than the scope of the task described. Drop a couple of arrows, outlines and annotations here and there to emphasize what are the important parts of the mockup from the task requirements perspective.">The mockup provided can sometimes be confusing for deve...</div>
-									</div>
-									<div class="my-10px">
-										<span class="bg-blue-500 p-5px px-10px text-white rounded-2">High</span>
-										<span class="bg-gray-400 p-5px px-10px text-black rounded-2">Feature</span>
-									</div>
-								</div>
-							</button>
-							<button class="d-flex w-100 border-0 border-top">
-								<div class="text-green fs-4">
-									<i class="fa-regular fa-circle-question ms-10px"></i> 
-								</div>
-								<div class="ms-10px">
-									<div class="fs-3">Use charts and diagrams</div>
-									<div class="">
-										<div class="fs-5 text-gray">#5 created in 2022-10-08</div>
-										<div class="fs-5 " title="While it is not always necessary, sometimes it might be beneficial to prepare a flowchart, a block diagram or some other kind of concept visualization that will render it easy for the developer to comprehend the task and its scope.">While it is not always necessary, sometimes it might be...</div>
-									</div>
-									<div class="my-10px">
-										<span class="bg-blue-500 p-5px px-10px text-white rounded-2">High</span>
-										<span class="bg-gray-400 p-5px px-10px text-black rounded-2">Feature</span>
-									</div>
-								</div>
-							</button>
 						</div>
 					</div>
 				</div>
 				<div class="col-12 col-lg-4 p-2">
-					<div class="">
+					<div class="card">
 						<div class="card-header bg-black text-white rounded-top">
-							<h4 class="mb-0 p-10px">In Progress (<span id="in-progress-tasks-count">4</span>)</h4>
+							<h4 class="mb-0 p-10px">In Progress (<span id="in-progress-tasks-count"></span>)</h4>
 
 						</div>
 						<div class="" id="in-progress-tasks">
 							<!-- IN PROGRESS TASKS HERE -->
-							<button class="d-flex w-100 border-0 border-top">
-								<div class="text-green fs-4">
-									<i class="spinner-border spinner-border-sm ms-10px" role="status"></i> 
-								</div>
-								<div class="ms-10px">
-									<div class="fs-3">Describe steps to reproduce an issue</div>
-									<div class="">
-										<div class="fs-5 text-gray">#6 created in 2022-10-08</div>
-										<div class="fs-5 " title="including as many details as possible.">including as many details as possible.</div>
-									</div>
-									<div class="my-10px">
-										<span class="bg-blue-500 p-5px px-10px text-white rounded-2">High</span>
-										<span class="bg-gray-400 p-5px px-10px text-black rounded-2">Bug</span>
-									</div>
-								</div>
-							</button>
-							<button class="d-flex w-100 border-0 border-top">
-								<div class="text-green fs-4">
-									<i class="spinner-border spinner-border-sm ms-10px" role="status"></i> 
-								</div>
-								<div class="ms-10px">
-									<div class="fs-3">Provide access</div>
-									<div class="">
-										<div class="fs-5 text-gray">#7 created in 2022-10-08</div>
-										<div class="fs-5 " title="to the affected account and services if possible. It might be hard to reproduce the exact environment on a local machine.">to the affected account and services if possible. It mi...</div>
-									</div>
-									<div class="my-10px">
-										<span class="bg-blue-500 p-5px px-10px text-white rounded-2">High</span>
-										<span class="bg-gray-400 p-5px px-10px text-black rounded-2">Bug</span>
-									</div>
-								</div>
-							</button>
-							<button class="d-flex w-100 border-0 border-top">
-								<div class="text-green fs-4">
-									<i class="spinner-border spinner-border-sm ms-10px" role="status"></i> 
-								</div>
-								<div class="ms-10px">
-									<div class="fs-3">Provide environment information</div>
-									<div class="">
-										<div class="fs-5 text-gray">#8 created in 2022-10-08</div>
-										<div class="fs-5" title="i.e., browser version, operating system version etc. Sometimes a list of installed browser plugins and extensions might be helpful as well.">i.e., browser version, operating system version etc. So...</div>
-									</div>
-									<div class="my-10px">
-										<span class="bg-blue-500 p-5px px-10px text-white rounded-2">High</span>
-										<span class="bg-gray-400 p-5px px-10px text-black rounded-2">Bug</span>
-									</div>
-								</div>
-							</button>
-							<button class="d-flex w-100 border-0 border-top">
-								<div class="text-green fs-4">
-									<i class="spinner-border spinner-border-sm ms-10px" role="status"></i> 
-								</div>
-								<div class="ms-10px">
-									<div class="fs-3">Provide a link to an exception and/or a stack trace</div>
-									<div class="">
-										<div class="fs-5 text-gray">#9 created in 2022-10-08</div>
-										<div class="fs-5 " title="as investigating those is usually the first step to take in resolving the problem.">as investigating those is usually the first step to tak...</div>
-									</div>
-									<div class="my-10px">
-										<span class="bg-blue-500 p-5px px-10px text-white rounded-2">High</span>
-										<span class="bg-gray-400 p-5px px-10px text-black rounded-2">Bug</span>
-									</div>
-								</div>
-							</button>
 						</div>
 					</div>
 				</div>
 				<div class="col-12 col-lg-4 p-2 ">
-					<div class="">
-						<div class="card-header bg-black text-white">
-							<h4 class="mb-0 p-10px">Done (<span id="done-tasks-count">4</span>)</h4>
+					<div class="card">
+						<div class="card-header bg-black text-white rounded-top">
+							<h4 class="mb-0 p-10px">Done (<span id="done-tasks-count"></span>)</h4>
 
 						</div>
 						<div class=" " id="done-tasks">
 							<!-- DONE TASKS HERE -->
-							<button class="d-flex w-100 border-0 border-top">
-								<div class="text-green fs-4">
-									<i class="fa-regular fa-circle-check ms-10px"></i>
-								</div>
-								<div class="">
-									<div class="fs-3 ms-10px">Provide access to logs</div>
-									<div class="">
-										<div class="fs-5 text-gray">#10 created in 2022-10-08</div>
-										<div class="fs-5 " title="as they can be helpful in reproducing the steps that caused the problem in the first place.">as they can be helpful in reproducing the steps that ca...</div>
-									</div>
-									<div class="my-10px">
-										<span class="bg-blue-500 p-5px px-10px text-white rounded-2">High</span>
-										<span class="bg-gray-400 p-5px px-10px text-black rounded-2">Bug</span>
-									</div>
-								</div>
-							</button>
-							<button class="d-flex w-100 border-0 border-top">
-								<div class="text-green fs-4">
-									<i class="fa-regular fa-circle-check ms-10px"></i>
-								</div>
-								<div class="ms-10px">
-									<div class="fs-3">Provide access to the affected server or database dump</div>
-									<div class="">
-										<div class="fs-5 text-gray">#11 created in 2022-10-08</div>
-										<div class="fs-5 " title="If it is possible and when it does not violate security policies, it is usually helpful for the developer to access the original data that might have played a role in the problem.">If it is possible and when it does not violate security...</div>
-									</div>
-									<div class="my-10px">
-										<span class="bg-blue-500 p-5px px-10px text-white rounded-2">High</span>
-										<span class="bg-gray-400 p-5px px-10px text-black rounded-2">Bug</span>
-									</div>
-								</div>
-							</button>
-							<button class="d-flex w-100 border-0 border-top">
-								<div class="text-green fs-4">
-									<i class="fa-regular fa-circle-check ms-10px"></i>
-								</div>
-								<div class="ms-10px">
-									<div class="fs-3">Make a screencast</div>
-									<div class="">
-										<div class="fs-5 text-gray">#12 created in 2022-10-08</div>
-										<div class="fs-5 " title="It is not always necessary, but many times a short screencast (or at least a screenshot) says more than a thousand words. While working on MacOS you can use QuickTime Player for the purpose but there are plenty of tools available for other operating systems as well.">It is not always necessary, but many times a short scre...</div>
-									</div>
-									<div class="my-10px">
-										<span class="bg-blue-500 p-5px px-10px text-white rounded-2">High</span>
-										<span class="bg-gray-400 p-5px px-10px text-black rounded-2">Bug</span>
-									</div>
-								</div>
-							</button>
-							<button  class="d-flex w-100 border-0 border-top">
-								<div class="text-green fs-4">
-									<i class="fa-regular fa-circle-check ms-10px"></i>
-								</div>
-								<div class="ms-10px">
-									<div class="fs-3">Provide contact information</div>
-									<div class="">
-										<div class="fs-5 text-gray">#13 created in 2022-10-08</div>
-										<div class="fs-5 " title="of the person that reported the bug. This will not always be possible, but in some cases it might be advantageous and most effective if a developer can have a chat with a person that actually experienced the bug, especially if the steps to reproduce a problem are not deterministic.">of the person that reported the bug. This will not alwa...</div>
-									</div>
-									<div class="my-10px">
-										<span class="bg-blue-500 p-5px px-10px text-white rounded-2">High</span>
-										<span class="bg-gray-400 p-5px px-10px text-black rounded-2">Bug</span>
-									</div>
-								</div>
-							</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 		<!-- END #content -->
-		
-		
+
+
 		<!-- BEGIN scroll-top-btn -->
-		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top"
+			data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
 		<!-- END scroll-top-btn -->
 	</div>
 	<!-- END #app -->
-	
+
 	<!-- TASK MODAL -->
 	<div class="modal fade" id="taskBtn" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
 		<div class="modal-dialog">
-		  <div class="modal-content">
-			<div class="modal-header">
-			  <h5 class="modal-title" id="exampleModalLabel">Add Task</h5>
-			  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<div class="modal-body">
-				<div class="mb-3">
-					<label for="TextInput" class="form-label">Title</label>
-					<input type="text" class="form-control" id="TextInput" >
-					
-					<label for="TextInput" class="form-label">Type</label>
-					<div class="form-check">
-					  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-					  <label class="form-check-label" for="flexRadioDefault1">
-						Feature
-					  </label>
-					</div>
-					<div class="form-check">
-					  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-					  <label class="form-check-label" for="flexRadioDefault2">
-						Bug
-					  </label>
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel"></h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+				<form name="add" id="myForm">
+						<div class="mb-3">
+							<label for="TextInput" class="form-label">Title</label>
+							<input id="tle" type="text" class="form-control">
+
+							<label for="TextInput" class="form-label">Type</label>
+							<div class="form-check">
+								<input id="Feature" class="form-check-input" type="radio" name="flexRadioDefault"
+									id="flexRadioDefault1">
+								<label class="form-check-label" for="flexRadioDefault1">
+									Feature
+								</label>
+							</div>
+							<div class="form-check">
+								<input id="Bug" class="form-check-input" type="radio" name="flexRadioDefault"
+									id="flexRadioDefault2" checked>
+								<label class="form-check-label" for="flexRadioDefault2">
+									Bug
+								</label>
+							</div>
+						</div>
+
+						<label for="TextInput" class="form-label">Priority</label>
+						<select id="pty" class="form-select" aria-label="Default select example">
+							<option value="High" selected>High</option>
+							<option value="Low">Low</option>
+							<option value="Medium">Medium</option>
+							<option value="Critacle">Critacle</option>
+
+						</select>
+
+						<label for="TextInput" class="form-label">Status</label>
+						<select id="sts" class="form-select" aria-label="Default select example">
+							<option value="To Do" selected>To Do</option>
+							<option value="In Progress">In Progress</option>
+							<option value="Done">Done</option>
+						</select>
+
+						<form>
+							<div class="row form-group">
+								<label for="date" class="col-sm-1 col-form-label">Date</label>
+								<div class="col-sm-12">
+									<div class="input-group date" id="datepicker">
+										<input id="dte" type="date" class="form-control">
+										<span class="input-group-append">
+
+										</span>
+									</div>
+								</div>
+							</div>
+						</form>
+
+						<div class="mb-3">
+							<label for="exampleFormControlTextarea1" class="form-label">Description</label>
+							<textarea  class="form-control" id="desc" rows="7"></textarea>
+						</div>
+				</form>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button id="sv" type="submit" class="btn btn-primary" data-bs-dismiss="modal">Save</button>
 					</div>
 				</div>
+				</div>
+			</div>
+		</div>
 
-			<label for="TextInput" class="form-label">Priority</label>
-			<select class="form-select" aria-label="Default select example">
-				<option selected>Please select</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
-			  </select>
-			
-			<label for="TextInput" class="form-label">Status</label>
-			<select class="form-select" aria-label="Default select example">
-				<option selected>Please select</option>
-				<option value="1">One</option>
-				<option value="2">Two</option>
-				<option value="3">Three</option>
-			  </select>
-
-			  <form>
-				<div class="row form-group">
-					<label for="date" class="col-sm-1 col-form-label">Date</label>
-					<div class="col-sm-12">
-						<div class="input-group date" id="datepicker">
-							<input type="date" class="form-control">
-							<span class="input-group-append">
-								
-							</span>
+		<!--==================edit&delete/modal=============-->
+		<div class="modal fade" id="taskBtn1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel"></h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form name="myForm" id="myForm">
+						<div class="mb-3">
+							<label for="TextInput" class="form-label">Title</label>
+							<input id="tle_1" type="text" class="form-control" id="TextInput">
+	
+							<label for="TextInput" class="form-label">Type</label>
+							<div class="form-check">
+								<input id="feature1" class="form-check-input" type="radio" name="flexRadioDefault"
+									id="flexRadioDefault1">
+								<label class="form-check-label" for="flexRadioDefault1">
+									Feature
+								</label>
+							</div>
+							<div class="form-check">
+								<input id="bug1" class="form-check-input" type="radio" name="flexRadioDefault"
+									id="flexRadioDefault2" checked>
+								<label class="form-check-label" for="flexRadioDefault2">
+									Bug
+								</label>
+							</div>
+						</div>
+	
+						<label for="TextInput" class="form-label">Priority</label>
+						<select id="pty1" class="form-select" aria-label="Default select example">
+							<option selected>Please select</option>
+							<option value="High">High</option>
+							<option value="Low">Low</option>
+							<option value="Medium">Medium</option>
+							<option value="Critacle">Critacle</option>
+	
+						</select>
+	
+						<label for="TextInput" class="form-label">Status</label>
+						<select id="sts1" class="form-select" aria-label="Default select example">
+							<option selected>Please select</option>
+							<option value="To Do">To Do</option>
+							<option value="In Progress">In Progress</option>
+							<option value="Done">Done</option>
+						</select>
+	
+						<form>
+							<div class="row form-group">
+								<label for="date" class="col-sm-1 col-form-label">Date</label>
+								<div class="col-sm-12">
+									<div class="input-group date" id="datepicker">
+										<input id="dte1" type="date" class="form-control">
+										<span class="input-group-append">
+	
+										</span>
+									</div>
+								</div>
+							</div>
+						</form>
+	
+						<div class="mb-3">
+							<label for="exampleFormControlTextarea1" class="form-label">Description</label>
+							<textarea  class="form-control" id="desc1" rows="7"></textarea>
+						</div>
+					</form>
+						<div class="modal-footer" id="modal-footer1">
+							
 						</div>
 					</div>
+					</div>
 				</div>
-			</form>
-
-			<div class="mb-3">
-				<label for="exampleFormControlTextarea1" class="form-label">Description</label>
-				<textarea class="form-control" id="exampleFormControlTextarea1" rows="7"></textarea>
-			  </div>
-			<div class="modal-footer">
-			  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-			  <button type="button" class="btn btn-primary">Save</button>
 			</div>
-		  </div>
-		</div>
-	  </div>
-	<!-- ================== BEGIN core-js ================== -->
-	<script src="assets/js/vendor.min.js"></script>
-	<script src="assets/js/app.min.js"></script>
-	<!-- ================== END core-js ================== -->
+		<!-- ================== BEGIN core-js ================== -->
+		<script src="assets/js/vendor.min.js"></script>
+		<script src="assets/js/app.min.js"></script>
+		<script src="./data.js"></script>
+		<script src="./editing.js"></script>
+		<!-- ================== END core-js ================== -->
 </body>
+
 </html>
