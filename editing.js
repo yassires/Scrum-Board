@@ -168,7 +168,7 @@ function updateTask(i) {
 
 }
 function deleteTask(i) {
-    tasks.splice(index, 1);
+    tasks.splice(i, 1);
     display();
     clearForm();
 } 
