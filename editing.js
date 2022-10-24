@@ -164,7 +164,7 @@ function updateTask(i) {
 
     document.getElementById("modal-footer1").innerHTML = `<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
     <button id="delete" type="button"class="btn btn-danger" data-bs-dismiss="modal" onclick="deleteTask(${i})" >Delete</button>
-    <button id="edit" type="submit" class="btn btn-primary" onclick="editTask(${i})" data-bs-dismiss="modal" >Edit</button>`
+    <button id="edit" type="submit" class="btn btn-primary" onclick="editTask(${i})" data-bs-dismiss="modal" >Update</button>`
 
 }
 function deleteTask(i) {
